@@ -1,0 +1,43 @@
+/* General grid styling */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns by default */
+    gap: 10px;
+    padding: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Responsive design: Adjust grid based on screen size */
+  @media (max-width: 768px) {
+    .image-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns for tablet */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .image-grid {
+      grid-template-columns: 1fr; /* Single column for mobile */
+    }
+  }
+  
+  /* Image styles */
+  .image-grid img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    filter: grayscale(100%); /* Start with grayscale */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  }
+  
+  /* Hover effects */
+  .image-grid img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+    filter: grayscale(0%); /* Reveal color on hover */
+  }
+  
+  /* Optional: Borders can be toggled via JavaScript */
+  .border-active img {
+    border: 5px solid #ff6f61; /* Example border color when active */
+  }
+  
